@@ -75,7 +75,7 @@ function App() {
   });
 
   return (
-    <div className="flex flex-col items-center justify-start p-8 bg-slate-50 min-h-screen gap-6 w-full relative overflow-x-hidden">
+    <div className="flex flex-col items-center justify-start p-4 bg-slate-50 min-h-screen gap-6 w-full relative overflow-x-hidden">
       <Search
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
