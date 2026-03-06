@@ -90,6 +90,23 @@ function App() {
         <div className="flex justify-center items-center h-64 w-full">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[transparent] border-t-[#065A65]"></div>
         </div>
+      ) : sortedProducts.length === 0 ? (
+        <div className="flex flex-col items-center justify-center text-center mt-12 mb-8 max-w-sm">
+          <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-sm mb-6 relative">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-[#065A65]">
+              <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+            <div className="absolute bottom-6 left-6 bg-[#065A65] rounded-full p-1 border-4 border-white">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="w-3 h-3 text-white">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </div>
+          </div>
+          <h2 className="text-xl font-bold text-[#172535] mb-3">No se encontraron perfumes</h2>
+          <p className="text-[#64748B] text-sm leading-relaxed">
+            Parece que no hay fragancias que coincidan con tu búsqueda. Intenta ajustando tus filtros para encontrar tu aroma ideal.
+          </p>
+        </div>
       ) : (
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-8 md:gap-8 mt-4 w-full max-w-6xl items-stretch justify-items-center">
           {sortedProducts.map((product) => (
