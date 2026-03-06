@@ -10,9 +10,10 @@ const categories = [
 interface FilterPillsProps {
     activeCategory: string;
     onCategoryChange: (category: string) => void;
+    onOpenFilters: () => void;
 }
 
-export default function FilterPills({ activeCategory, onCategoryChange }: FilterPillsProps) {
+export default function FilterPills({ activeCategory, onCategoryChange, onOpenFilters }: FilterPillsProps) {
     return (
         <div className="flex items-center justify-start md:justify-center gap-2 overflow-x-auto py-2 w-full max-w-2xl px-0 scrollbar-hide">
             {categories.map((category) => (
@@ -27,7 +28,10 @@ export default function FilterPills({ activeCategory, onCategoryChange }: Filter
                     {category}
                 </button>
             ))}
-            <button className="flex items-center justify-center w-[38px] h-[38px] rounded-full bg-[#E5EBEB] text-[#1D323C] border border-[#CBD5D8] hover:bg-[#d8e0e0] flex-shrink-0 ml-1">
+            <button
+                onClick={onOpenFilters}
+                className="flex items-center justify-center w-[38px] h-[38px] rounded-full bg-[#E5EBEB] text-[#1D323C] border border-[#CBD5D8] hover:bg-[#d8e0e0] flex-shrink-0 ml-1"
+            >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
