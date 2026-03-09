@@ -51,7 +51,7 @@ export default function ProductCard({
                 </h2>
 
                 <p className="text-[#172535] font-semibold text-base mt-auto pt-2">
-                    ${price.toFixed(2)}
+                    {new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', minimumFractionDigits: 0 }).format(price)}
                 </p>
             </div>
         </div>
